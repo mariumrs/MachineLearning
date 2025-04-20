@@ -195,6 +195,7 @@ Missing Values Identified:
 - horsepower has 6 missing values.
 
 Here’s what we found in the numerical columns:
+
 Skewness:
 ```output
 mpg             0.457092
