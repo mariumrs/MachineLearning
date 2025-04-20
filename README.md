@@ -43,31 +43,32 @@ The following results are what was observed when we changed the variable values.
 
 ##### No Noise
 Code:
-<img width="505" alt="image" src="">
+![no noise code](https://github.com/user-attachments/assets/b80760e7-79c5-45b0-baa7-3f6d04250740)
 
 Output:
-<img width="505" alt="image" src="">
+![no noise output](https://github.com/user-attachments/assets/efff2288-cd23-4c7a-bf41-fb3380cad8fb)
+
 
 When we eliminate the noise, we are looking at a perfect one to one relationship in which every point falls neatly into place, forming a straight line which makes the Pearson correlation hit the max 1.0000.
 
 ##### Less Noise 
 
 Code:
-<img width="505" alt="image" src="">
+![small noise code](https://github.com/user-attachments/assets/ddee93cf-1a1d-414d-9d9e-94e07b668ea9)
 
 Output:
-<img width="505" alt="image" src="">
-  
+![small noise output](https://github.com/user-attachments/assets/14ed5904-e4eb-4887-8384-40c18241b420)
+
 Adding a bit of noise, that perfect line will start to wobble slightly. The connection is still very strong and the correlation stays high around 0.9 to 0.99.
 
 ##### High Noise 
 
 Code:
-<img width="505" alt="image" src="">
+![high noise code](https://github.com/user-attachments/assets/0b6f7d43-5975-417b-bc00-36fb2dc65507)
 
 Output:
-<img width="505" alt="image" src="">
-  
+![high noise](https://github.com/user-attachments/assets/81ca37ce-9bce-46fd-93df-3aea87e6c83a)
+
 When throwing in a lot of noise, things start to fall apart. The link between the two variables weakens, the correlation drops and the scatterplot starts to look like a cloud than a line. It is harder to spot any clear trend.
 
 #### Unit 5 
