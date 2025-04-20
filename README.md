@@ -33,27 +33,42 @@ Learned objectives:
 - Focused on understanding the fundamentals of idioms and grammer by participating in a collaborative discussion. 
 - The comparison done by my peers hekped me expand my learning to see different perspectives.
 
-### Unit 3-4-5 
+### Unit 3 
 Learned Objectives : 
-- Exploring R & python : data writing and reading
-- Understanding how plotly is used for graphs
+- Understand the applicability and challenges associated with different datasets for the use of machine learning algorithms.
+- Understanding how how the change in data points impacts correlation and regression.
 
-#### Python using VS code 
+#### Pearson's correlation 
+The following results are what was observed when we changed the variable values.
 
-<img width="505" alt="image" src="https://github.com/user-attachments/assets/09674afe-ee07-4014-8cd2-d94dee01f54a">
+##### No Noise
+Code:
+<img width="505" alt="image" src="">
 
-#### R using R studio 
+Output:
+<img width="505" alt="image" src="">
 
-- Some of the graphs I was able to achieve using R
+When we eliminate the noise, we are looking at a perfect one to one relationship in which every point falls neatly into place, forming a straight line which makes the Pearson correlation hit the max 1.0000.
+
+##### Less Noise 
+
+Code:
+<img width="505" alt="image" src="">
+
+Output:
+<img width="505" alt="image" src="">
   
-<img width="416" alt="image" src="https://github.com/user-attachments/assets/f50f3a60-3cdf-4934-9770-8feeeb1cdc21"> 
-<img width="660" alt="image" src="https://github.com/user-attachments/assets/c5c8b91c-7efe-4a88-bda0-383db35dd140">
+Adding a bit of noise, that perfect line will start to wobble slightly. The connection is still very strong and the correlation stays high around 0.9 to 0.99.
 
-In conclusion I was able to do all my visualizations in R regardless of being new to it, I explored a lot of readings to understand wo to personalize charts and make them some of my key references were from the Book 
-- Title: An introduction to statistical learning, with applications in R by James, G., Witten, D., Hastie, T. & Tibshirani, R
+##### High Noise 
 
-As well as youtube course of R: 
-https://www.youtube.com/watch?v=riONFzJdXcs&list=PLqzoL9-eJTNBDdKgJgJzaQcY6OXmsXAHU
+Code:
+<img width="505" alt="image" src="">
+
+Output:
+<img width="505" alt="image" src="">
+  
+When throwing in a lot of noise, things start to fall apart. The link between the two variables weakens, the correlation drops and the scatterplot starts to look like a cloud than a line. It is harder to spot any clear trend.
 
 #### Unit 5 
 Learned Objectives: 
