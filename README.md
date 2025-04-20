@@ -278,3 +278,10 @@ Convergence in K-Means occurs when the centroids no longer move significantly be
 In the second animation, using the “Uniform Points” option, I manually selected the initial centroid positions. Regardless of the starting points, the algorithm consistently produced evenly spaced clusters. This showed that when data is uniformly distributed, K-Means tends to converge reliably, as there are no natural groupings that could mislead the algorithm.
 
 Overall, the animations reinforced how important both initial centroid placement and data distribution are for K-Means to generate meaningful and consistent results and provided a clear view of how the algorithm reaches convergence during clustering. K-Means doesn’t consider the shape or density of clusters, it only focuses on distance to the centre. Hence, highlighting if the data isn’t roughly circular or evenly distributed, the results might not actually reflect the real structure. That’s something I’ll be more aware of when deciding whether or not K-Means is the right approach for a dataset.
+
+
+Jaccard coefficient:
+
+(Jack, Mary) = 3 / 7 = 0.429
+(Jack, Jim) = 5 / 7 = 0.714
+(Jim, Mary) = 1 / 7 = 0.143
