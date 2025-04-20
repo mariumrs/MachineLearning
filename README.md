@@ -187,6 +187,72 @@ Output:
 ![ex4 3](https://github.com/user-attachments/assets/f70e8ddc-fee3-407d-b4a5-7799c0ce3ffd)
 
 #### Unit 4
+Learned Objectives: 
+- Apply and critically appraise machine learning techniques to real-world problems, particularly where technical risk and uncertainty is involved.
+
+EDA Tutorial
+Missing Values Identified:
+- horsepower has 6 missing values.
+
+Here’s what we found in the numerical columns:
+Skewness:
+```output
+mpg             0.457092
+cylinders       0.508109
+displacement    0.701669
+horsepower      1.087326
+weight          0.519586
+acceleration    0.291587
+model year      0.019688
+origin          0.915185
+```
+Highest skewness:
+
+- horsepower
+
+- origin
+
+- displacement
+
+Lowest skewness (almost symmetric):
+
+- model year
+
+
+Kurtosis:
+```output
+mpg            -0.515993
+cylinders      -1.398199
+displacement   -0.778317
+horsepower      0.696947
+weight         -0.809259
+acceleration    0.444234
+model year     -1.167446
+origin         -0.841885
+```
+Most peaked (high kurtosis):
+
+- horsepower
+
+- acceleration
+
+Light tails (platykurtic):
+
+- cylinders
+
+- model year
+
+Highest skewness:
+
+horsepower: 1.09 (right-skewed)
+
+- origin
+
+- displacement
+
+Lowest skewness (almost symmetric):
+
+- model year
 
 #### Unit 5 
 Learned Objectives: 
