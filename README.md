@@ -31,9 +31,74 @@ In this unit, I delved into the evolving landscape of machine learning and its s
 The activities paired with self reflection really made me aware of where I stood in terms of my personal development.
 
 ### Unit 1-2 
-Learned objectives:
-- Focused on understanding the fundamentals of idioms and grammer by participating in a collaborative discussion. 
-- The comparison done by my peers hekped me expand my learning to see different perspectives.
+Learned Objectives: 
+- Apply and critically appraise machine learning techniques to real-world problems, particularly where technical risk and uncertainty is involved.
+
+EDA Tutorial
+Missing Values Identified:
+- horsepower has 6 missing values.
+
+Here’s what we found in the numerical columns:
+
+Skewness:
+```output
+mpg             0.457092
+cylinders       0.508109
+displacement    0.701669
+horsepower      1.087326
+weight          0.519586
+acceleration    0.291587
+model year      0.019688
+origin          0.915185
+```
+Highest skewness:
+
+- horsepower
+
+- origin
+
+- displacement
+
+Lowest skewness (almost symmetric):
+
+- model year
+
+
+Kurtosis:
+```output
+mpg            -0.515993
+cylinders      -1.398199
+displacement   -0.778317
+horsepower      0.696947
+weight         -0.809259
+acceleration    0.444234
+model year     -1.167446
+origin         -0.841885
+```
+Most peaked (high kurtosis):
+
+- horsepower
+
+- acceleration
+
+Light tails (platykurtic):
+
+- cylinders
+
+- model year
+
+Highest skewness:
+
+horsepower: 1.09 (right-skewed)
+
+- origin
+
+- displacement
+
+Lowest skewness (almost symmetric):
+
+- model year
+
 
 ### Unit 3 
 Learned Objectives : 
@@ -188,72 +253,16 @@ Output:
 
 #### Unit 4
 Learned Objectives: 
-- Apply and critically appraise machine learning techniques to real-world problems, particularly where technical risk and uncertainty is involved.
+- Understand the applicability and challenges associated with different datasets for the use of machine learning algorithms.
 
-EDA Tutorial
-Missing Values Identified:
-- horsepower has 6 missing values.
+Correlation Heatmap:
 
-Here’s what we found in the numerical columns:
+![image](https://github.com/user-attachments/assets/bcc6c6d3-819a-460e-b26a-207463b49575)
 
-Skewness:
-```output
-mpg             0.457092
-cylinders       0.508109
-displacement    0.701669
-horsepower      1.087326
-weight          0.519586
-acceleration    0.291587
-model year      0.019688
-origin          0.915185
-```
-Highest skewness:
+Linear Regression:
 
-- horsepower
+![image](https://github.com/user-attachments/assets/603cf72f-30c6-48d3-b19c-ef8875e78e7b)
 
-- origin
-
-- displacement
-
-Lowest skewness (almost symmetric):
-
-- model year
-
-
-Kurtosis:
-```output
-mpg            -0.515993
-cylinders      -1.398199
-displacement   -0.778317
-horsepower      0.696947
-weight         -0.809259
-acceleration    0.444234
-model year     -1.167446
-origin         -0.841885
-```
-Most peaked (high kurtosis):
-
-- horsepower
-
-- acceleration
-
-Light tails (platykurtic):
-
-- cylinders
-
-- model year
-
-Highest skewness:
-
-horsepower: 1.09 (right-skewed)
-
-- origin
-
-- displacement
-
-Lowest skewness (almost symmetric):
-
-- model year
 
 #### Unit 5 
 Learned Objectives: 
