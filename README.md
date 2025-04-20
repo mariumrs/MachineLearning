@@ -133,5 +133,73 @@ print(predictedCO2)
 Output:
 ![co2 predicted](https://github.com/user-attachments/assets/f17bffa3-e15f-4538-b45a-6eaab18eaf1f)
 
+#### Polynomial Regression
+```python
+import numpy
+import matplotlib.pyplot as plt
+
+x = [1,2,3,5,6,7,8,9,10,12,13,14,15,16,18,19,21,22]
+y = [100,90,80,60,60,55,60,65,70,70,75,76,78,79,90,99,99,100]
+
+#NumPy has a method that lets us make a polynomial model
+mymodel = numpy.poly1d(numpy.polyfit(x, y, 3))
+
+#specify how the line will display, we start at position 1, and end at position 22
+myline = numpy.linspace(1, 22, 100)
+
+plt.scatter(x, y)
+plt.plot(myline, mymodel(myline))
+plt.show()
+```
+Output:
+
+![ex4 1](https://github.com/user-attachments/assets/6d17b786-8254-45a0-9522-20bc047193c4)
+
+```python
+import numpy
+from sklearn.metrics import r2_score
+
+x = [1,2,3,5,6,7,8,9,10,12,13,14,15,16,18,19,21,22]
+y = [100,90,80,60,60,55,60,65,70,70,75,76,78,79,90,99,99,100]
+
+mymodel = numpy.poly1d(numpy.polyfit(x, y, 3))
+
+print(r2_score(y, mymodel(x)))
+```
+Output: 
+
+![ex4 2](https://github.com/user-attachments/assets/f5d971a8-b3aa-4870-a6ef-9fa606ecf820)
+
+```python
+import numpy
+from sklearn.metrics import r2_score
+
+x = [1,2,3,5,6,7,8,9,10,12,13,14,15,16,18,19,21,22]
+y = [100,90,80,60,60,55,60,65,70,70,75,76,78,79,90,99,99,100]
+
+mymodel = numpy.poly1d(numpy.polyfit(x, y, 3))
+
+speed = mymodel(17)
+print(speed)
+```
+Output:
+
+![ex4 3](https://github.com/user-attachments/assets/f70e8ddc-fee3-407d-b4a5-7799c0ce3ffd)
+
+#### Unit 4
+
 #### Unit 5 
 Learned Objectives: 
+- Clustering and relate that with algorithm logic.
+- Algorithm logic
+
+##### Thoughts on the relationships based on both animations in the module wiki
+Watching the K-Means animation helped me grasp how the algorithm works beyond just the steps.
+
+The first animation clearly demonstrated how K-Means clustering works step by step. It starts with randomly placing centroids, then repeatedly assigns points to the nearest centroid and updates the centroid positions based on the average location of those assigned points. I noticed that when centroids were placed too far from the main data distribution, they often ended up with very few or even no points assigned to them. In contrast, centroids that began closer to the centre of the data resulted in more balanced clusters and smoother convergence.
+
+Convergence in K-Means occurs when the centroids no longer move significantly between iterations, meaning the cluster assignments have stabilised and further updates do not change the outcome. The animation made this process easy to visualise, as the centroids gradually shifted less and less with each step until they finally settled.
+
+In the second animation, using the “Uniform Points” option, I manually selected the initial centroid positions. Regardless of the starting points, the algorithm consistently produced evenly spaced clusters. This showed that when data is uniformly distributed, K-Means tends to converge reliably, as there are no natural groupings that could mislead the algorithm.
+
+Overall, the animations reinforced how important both initial centroid placement and data distribution are for K-Means to generate meaningful and consistent results and provided a clear view of how the algorithm reaches convergence during clustering. K-Means doesn’t consider the shape or density of clusters, it only focuses on distance to the centre. Hence, highlighting if the data isn’t roughly circular or evenly distributed, the results might not actually reflect the real structure. That’s something I’ll be more aware of when deciding whether or not K-Means is the right approach for a dataset.
