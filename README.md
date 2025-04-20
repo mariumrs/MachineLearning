@@ -39,10 +39,10 @@ Learned objectives:
 Learned Objectives : 
 - Understanding how how the change in data points impacts correlation and regression.
 
-#### Pearson's correlation 
+Pearson's correlation 
 The following results are what was observed when we changed the variable values.
 
-##### No Noise
+No Noise
 Code:
 
 ![no noise code](https://github.com/user-attachments/assets/b80760e7-79c5-45b0-baa7-3f6d04250740)
@@ -54,7 +54,7 @@ Output:
 
 When we eliminate the noise, we are looking at a perfect one to one relationship in which every point falls neatly into place, forming a straight line which makes the Pearson correlation hit the max 1.0000.
 
-##### Less Noise 
+Less Noise 
 
 Code:
 
@@ -66,7 +66,7 @@ Output:
 
 Adding a bit of noise, that perfect line will start to wobble slightly. The connection is still very strong and the correlation stays high around 0.9 to 0.99.
 
-##### High Noise 
+High Noise 
 
 Code:
 
@@ -79,7 +79,7 @@ Output:
 When throwing in a lot of noise, things start to fall apart. The link between the two variables weakens, the correlation drops and the scatterplot starts to look like a cloud than a line. It is harder to spot any clear trend.
 
 
-#### Linear Regression
+Linear Regression
 When looking at linear regression, the way your data behaves really makes all the difference. If there is a clear trend and the numbers don’t vary too much, the line fits nicely and the connection between variables is easy to see. Even when adding a bit of noise the pattern still holds, but it is just a little messier. The more randomness you throw in, the harder it becomes to spot any solid link—the data spreads out and the line doesn’t really capture what is going on. Outliers, even just one or two weird values, can throw everything off and totally shift the direction of the line. And if there’s no actual relationship between the variables, you will notice the line pretty much flattens out, because there is nothing meaningful to predict.
 
 Code:
@@ -90,13 +90,13 @@ Output:
 
 ![ex2 chart](https://github.com/user-attachments/assets/45131851-0047-4f64-94e2-12809c96e015)
 
-##### Predict Future Values
+Predict Future Values
 
 If you tweak the data, the whole pattern shifts, so the line the model draws will change too. With more consistent values, predictions usually improve. But if we try to predict way beyond the original data range, It becomes less reliable at that stage because the model is essentially estimating without solid reference points.
 
 ![predicting future values ex2](https://github.com/user-attachments/assets/0191cc84-8400-4308-a640-260ff46f6683)
 
-#### Multiple Linear Regression
+Multiple Linear Regression
 
 Code: 
 ```python
@@ -133,7 +133,7 @@ print(predictedCO2)
 Output:
 ![co2 predicted](https://github.com/user-attachments/assets/f17bffa3-e15f-4538-b45a-6eaab18eaf1f)
 
-#### Polynomial Regression
+Polynomial Regression
 ```python
 import numpy
 import matplotlib.pyplot as plt
@@ -260,7 +260,6 @@ Learned Objectives:
 - Clustering and relate that with algorithm logic.
 - Algorithm logic
 
-##### Thoughts on the relationships based on both animations in the module wiki
 Watching the K-Means animation helped me grasp how the algorithm works beyond just the steps.
 
 The first animation clearly demonstrated how K-Means clustering works step by step. It starts with randomly placing centroids, then repeatedly assigns points to the nearest centroid and updates the centroid positions based on the average location of those assigned points. I noticed that when centroids were placed too far from the main data distribution, they often ended up with very few or even no points assigned to them. In contrast, centroids that began closer to the centre of the data resulted in more balanced clusters and smoother convergence.
