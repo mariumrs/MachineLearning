@@ -1,32 +1,34 @@
 # E - Portfolio
 ## About me 
-Im a Masters student pursuing Data science based in UAE 
+I am a Masters student pursuing Data science based in the UAE.
 
 
 ### Skills 
 - Data Anlysis
 - Business analytics
 - Data Visualization
-- Quick and flexible with different domains
+- Machine Learning Algorithms
+- Deep Learning
 
 ### Expertise 
 Python, R, Google Analytics 4, Tableau, power BI, Jira, SQLplus , MySQL, SAP 
 
-## Projects 
-Here is a summary of all the details of my projects so far!
+## Projects
+Here is a summary of all the details of my Machine Learning project so far!
 
-### Data visualization [Oct 2024]
+### Machine Learning [Jan 2025]
 #### Introduction 
-In this unit, I explored the critical role of data visualization in analyzing large datasets to enhance understanding of business challenges and inform decision-making processes. Data visualization serves as a universal language, enabling viewers to uncover patterns and relationships within data, thus facilitating effective communication of business issues both internally and externally.
+In this unit, I delved into the evolving landscape of machine learning and its significance in deriving insights from complex data. Through hands-on experience and theoretical exploration, I developed an understanding of how algorithms can be trained to recognize patterns, make predictions, and support data-driven strategies. Machine learning emerged not just as a technical skillset, but as a practical tool for solving real-world problems transforming raw information into actionable intelligence across diverse business contexts.
 
 #### Expected Learning outcmes: 
-- Learn fundementals of visualizations
-- Learn how to effectively visualize data
-- Engage in self reflection
+- Understand the fundamentals of machine learning concepts and algorithms
+- Learn how to apply machine learning techniques to real-world datasets
+- Develop the ability to critically evaluate model performance and outcomes
+- Engage in self-reflection on the ethical and practical implications of machine learning
 
- #### How I’ve applied these concepts in practice
+#### How I’ve applied these concepts in practice
 
-The activities paired with self reflection really made me aware of where I stood in terms of my own development 
+The activities paired with self reflection really made me aware of where I stood in terms of my personal development.
 
 ### Unit 1-2 
 Learned objectives:
@@ -35,7 +37,6 @@ Learned objectives:
 
 ### Unit 3 
 Learned Objectives : 
-- Understand the applicability and challenges associated with different datasets for the use of machine learning algorithms.
 - Understanding how how the change in data points impacts correlation and regression.
 
 #### Pearson's correlation 
@@ -64,7 +65,7 @@ Adding a bit of noise, that perfect line will start to wobble slightly. The conn
 ##### High Noise 
 
 Code:
-![high noise code](https://github.com/user-attachments/assets/0b6f7d43-5975-417b-bc00-36fb2dc65507)
+![high noise code](https://github.com/user-attachments/assets/5ba60a13-5f94-4fdb-a392-c0e521882eef)
 
 Output:
 ![high noise](https://github.com/user-attachments/assets/81ca37ce-9bce-46fd-93df-3aea87e6c83a)
