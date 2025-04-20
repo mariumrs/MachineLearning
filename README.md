@@ -285,3 +285,314 @@ Jaccard coefficient:
 (Jack, Mary) = 3 / 7 = 0.429
 (Jack, Jim) = 5 / 7 = 0.714
 (Jim, Mary) = 1 / 7 = 0.143
+
+#### Unit 7
+
+Simple Perceptron:
+```python
+import numpy as np
+inputs = np.array([45, 25])
+# Check the type of the inputs
+type(inputs)
+# check the value at index position 0
+inputs[0]
+# creating the weights as Numpy array
+weights = np.array([0.7, 0.1])
+# Check the value at index 0 
+weights[0]
+def sum_func(inputs, weights):
+    return inputs.dot(weights)
+# for weights = [0.7, 0.1]
+s_prob1 = sum_func(inputs, weights)
+s_prob1
+def step_function(sum_func):
+  if (sum_func >= 1):
+    print(f'The Sum Function is greater than or equal to 1')
+    return 1
+  else:
+        print(f'The Sum Function is NOT greater')
+        return 0
+step_function(s_prob1 )
+```
+Output: 
+
+![image](https://github.com/user-attachments/assets/811b753e-7e20-4003-8c17-e9be09bd8820)
+
+
+#### Unit 8
+Gradient Cost Function:
+The following code is after changing the number of iteration and the learning rate and it is observed that the cost increases per iteration when the learning rate is increased.
+
+```python
+import numpy as np
+
+def gradient_descent(x,y):
+    m_curr = b_curr = 0
+    iterations = 10     
+    n = len(x)
+    learning_rate = 0.08   
+
+    for i in range(iterations):
+        y_predicted = m_curr * x + b_curr
+        cost = (1/n) * sum([val**2 for val in (y-y_predicted)])
+        md = -(2/n)*sum(x*(y-y_predicted))
+        bd = -(2/n)*sum(y-y_predicted)
+        m_curr = m_curr - learning_rate * md
+        b_curr = b_curr - learning_rate * bd
+        print ("m {}, b {}, cost {} iteration {}".format(m_curr,b_curr,cost, i))
+
+x = np.array([1,2,3,4,5])
+y = np.array([5,7,9,11,13])
+
+gradient_descent(x,y)
+```
+
+
+Output:
+
+![image](https://github.com/user-attachments/assets/396dce85-3dca-402e-a2fe-117eeb7177d7)
+
+
+#### Unit 11 
+
+Model Performance Measurement
+Code:
+
+```python
+from sklearn.metrics import confusion_matrix
+tn, fp, fn, tp = confusion_matrix([0, 1, 0, 1], [1, 1, 1, 0]).ravel()
+(tn, fp, fn, tp)
+import matplotlib.pyplot as plt
+from sklearn.datasets import make_classification
+from sklearn.metrics import confusion_matrix, ConfusionMatrixDisplay
+from sklearn.model_selection import train_test_split
+from sklearn.svm import SVC
+X, y = make_classification(random_state=0)
+X_train, X_test, y_train, y_test = train_test_split(X, y,
+                                                    random_state=0)
+clf = SVC(random_state=0)
+clf.fit(X_train, y_train)
+SVC(random_state=0)
+predictions = clf.predict(X_test)
+cm = confusion_matrix(y_test, predictions, labels=clf.classes_)
+disp = ConfusionMatrixDisplay(confusion_matrix=cm,
+                               display_labels=clf.classes_)
+disp.plot()
+
+plt.show()
+```
+Output:
+
+![image](https://github.com/user-attachments/assets/7d1f3e9c-1bad-48fb-b41e-740aea9d1dce)
+
+
+```python
+from sklearn.metrics import f1_score
+
+y_true = [0, 1, 2, 0, 1, 2]
+y_pred = [0, 2, 1, 0, 0, 1]
+
+print(f"Macro f1 score: {f1_score(y_true, y_pred, average='macro')}")
+
+print(f"Micro F1: {f1_score(y_true, y_pred, average='micro')}")
+
+print(f"Weighted Average F1: {f1_score(y_true, y_pred, average='weighted')}")
+
+print(f"F1 No Average: {f1_score(y_true, y_pred, average=None)}")
+
+y_true = [0, 0, 0, 0, 0, 0]
+y_pred = [0, 0, 0, 0, 0, 0]
+f1_score(y_true, y_pred, zero_division=1)
+
+# multilabel classification
+y_true = [[0, 0, 0], [1, 1, 1], [0, 1, 1]]
+y_pred = [[0, 0, 0], [1, 1, 1], [1, 1, 0]]
+print(f"F1 No Average: {f1_score(y_true, y_pred, average=None)}")
+```
+Output:
+
+![image](https://github.com/user-attachments/assets/7c20bccc-9e13-446c-8a06-a1483fbbe378)
+
+
+```python
+from sklearn.metrics import accuracy_score
+y_pred = [0, 2, 1, 3]
+y_true = [0, 1, 2, 3]
+accuracy_score(y_true, y_pred)
+```
+Output:
+
+![image](https://github.com/user-attachments/assets/2d5a5060-c91b-4945-a224-fbb716aea219)
+
+
+```python
+from sklearn.metrics import precision_score
+y_true = [0, 1, 2, 0, 1, 2]
+y_pred = [0, 2, 1, 0, 0, 1]
+precision_score(y_true, y_pred, average='macro')
+```
+Output:
+
+![image](https://github.com/user-attachments/assets/9174a1a6-7f41-4947-b334-d241c425a9db)
+
+
+```python
+from sklearn.metrics import recall_score
+y_true = [0, 1, 2, 0, 1, 2]
+y_pred = [0, 2, 1, 0, 0, 1]
+recall_score(y_true, y_pred, average='macro')
+```
+Output:
+
+![image](https://github.com/user-attachments/assets/5c7d2219-0529-4c3a-999f-414c953811e4)
+
+
+```python
+from sklearn.metrics import classification_report
+y_true = [0, 1, 2, 2, 2]
+y_pred = [0, 0, 2, 2, 1]
+target_names = ['class 0', 'class 1', 'class 2']
+print(classification_report(y_true, y_pred, target_names=target_names))
+```
+Output:
+
+![image](https://github.com/user-attachments/assets/38618dc7-896b-4905-af66-79fdb98c3c9c)
+
+
+```python
+from sklearn.datasets import load_breast_cancer
+from sklearn.linear_model import LogisticRegression
+from sklearn.metrics import roc_auc_score
+X, y = load_breast_cancer(return_X_y=True)
+clf = LogisticRegression(solver="liblinear", random_state=0).fit(X, y)
+roc_auc_score(y, clf.predict_proba(X)[:, 1])
+```
+Output:
+
+![image](https://github.com/user-attachments/assets/097dacb6-63be-4be8-bf40-ea6736168727)
+
+
+```python
+#multiclass case
+from sklearn.datasets import load_iris
+X, y = load_iris(return_X_y=True)
+clf = LogisticRegression(solver="liblinear").fit(X, y)
+roc_auc_score(y, clf.predict_proba(X), multi_class='ovr')
+```
+Output:
+
+![image](https://github.com/user-attachments/assets/9bf00bce-971f-4f5f-8b0d-92ba6deed525)
+
+
+```python
+import numpy as np
+import matplotlib.pyplot as plt
+from itertools import cycle
+
+from sklearn import svm, datasets
+from sklearn.metrics import roc_curve, auc
+from sklearn.model_selection import train_test_split
+from sklearn.preprocessing import label_binarize
+from sklearn.multiclass import OneVsRestClassifier
+from sklearn.metrics import roc_auc_score
+
+# Import some data to play with
+iris = datasets.load_iris()
+X = iris.data
+y = iris.target
+
+# Binarize the output
+y = label_binarize(y, classes=[0, 1, 2])
+n_classes = y.shape[1]
+
+# Add noisy features to make the problem harder
+random_state = np.random.RandomState(0)
+n_samples, n_features = X.shape
+X = np.c_[X, random_state.randn(n_samples, 200 * n_features)]
+
+# shuffle and split training and test sets
+X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.5, random_state=0)
+
+# Learn to predict each class against the other
+classifier = OneVsRestClassifier(
+    svm.SVC(kernel="linear", probability=True, random_state=random_state)
+)
+y_score = classifier.fit(X_train, y_train).decision_function(X_test)
+
+# Compute ROC curve and ROC area for each class
+fpr = dict()
+tpr = dict()
+roc_auc = dict()
+for i in range(n_classes):
+    fpr[i], tpr[i], _ = roc_curve(y_test[:, i], y_score[:, i])
+    roc_auc[i] = auc(fpr[i], tpr[i])
+
+# Compute micro-average ROC curve and ROC area
+fpr["micro"], tpr["micro"], _ = roc_curve(y_test.ravel(), y_score.ravel())
+roc_auc["micro"] = auc(fpr["micro"], tpr["micro"])
+```
+
+```python
+plt.figure()
+lw = 2
+plt.plot(
+    fpr[2],
+    tpr[2],
+    color="darkorange",
+    lw=lw,
+    label="ROC curve (area = %0.2f)" % roc_auc[2],
+)
+plt.plot([0, 1], [0, 1], color="navy", lw=lw, linestyle="--")
+plt.xlim([0.0, 1.0])
+plt.ylim([0.0, 1.05])
+plt.xlabel("False Positive Rate")
+plt.ylabel("True Positive Rate")
+plt.title("Receiver operating characteristic example")
+plt.legend(loc="lower right")
+plt.show()
+```
+Output:
+
+![image](https://github.com/user-attachments/assets/1c0b709e-4e75-424a-a1b3-d7f6f1581ee5)
+
+
+```python
+from sklearn.metrics import log_loss
+log_loss(["spam", "ham", "ham", "spam"], [[.1, .9], [.9, .1], [.8, .2], [.35, .65]])
+```
+Output:
+
+![image](https://github.com/user-attachments/assets/57870a4f-3214-4039-ac61-5c91446346c0)
+
+
+```python
+from sklearn.metrics import mean_squared_error
+y_true = [3, -0.5, 2, 7]
+y_pred = [2.5, 0.0, 2, 8]
+mean_squared_error(y_true, y_pred)
+```
+Output (RMSE):
+
+![image](https://github.com/user-attachments/assets/3e15d777-0e3f-4030-b7c0-e20aa9a2bc4a)
+
+
+```python
+from sklearn.metrics import mean_absolute_error
+y_true = [3, -0.5, 2, 7]
+y_pred = [2.5, 0.0, 2, 8]
+mean_absolute_error(y_true, y_pred)
+```
+Output (MAE):
+
+![image](https://github.com/user-attachments/assets/dc329d40-47a9-4260-9973-033bc84e2ac3)
+
+
+```python
+from sklearn.metrics import r2_score
+
+r2_score(y_true, y_pred)
+```
+Output (r squared): 
+
+![image](https://github.com/user-attachments/assets/e577cade-0699-4b00-86b2-af6bc083748b)
+
